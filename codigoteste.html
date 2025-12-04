@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Revisão Completa</title>
+  <style>
+    body { text-align: center; font-family: Arial; }
+    button { padding: 10px; background: #007bff; color: white; border: none; border-radius: 5px; }
+    button:hover { background: #0056b3; }
+  </style>
+</head>
+<body>
+  <h1 id="titulo">Olá, mundo!</h1>
+  <button onclick="mudarTexto()">Clique aqui</button>
+
+  <script>
+    function mudarTexto() {
+      document.getElementById('titulo').textContent = 'Texto alterado com JavaScript!';
+    }
+  </script>
+</body>
+</html>

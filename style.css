@@ -1,0 +1,297 @@
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  color: #222;
+  background-color: #DCDCDC;
+  padding-top: 85px;
+  /* evita que o conteúdo fique atrás do header fixo */
+}
+
+/* --- Cabeçalho --- */
+header {
+  background: #0d47a1;
+  color: #fff;
+  padding: 1.5rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 999;
+}
+
+header .logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #fff;
+  text-decoration: none;
+
+  transition: transform 0.25s ease;
+  display: inline-block;
+}
+
+header .logo:hover {
+  transform: scale(1.1);
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+  margin: 0;
+  padding: 0;
+}
+
+nav {
+  padding-right: 5rem;
+}
+
+nav a {
+  color: #fff;
+  text-decoration: none;
+  transition: transform 0.25s ease;
+  display: inline-block;
+}
+
+nav a.active,
+nav a:hover {
+  text-decoration: underline;
+  transform: scale(1.11);
+}
+
+/* --- Seção hero/banner --- */
+.hero {
+  background: url('4.jpg') center/cover no-repeat;
+  color: #ffffff;
+  text-align: center;
+  padding: 8rem 2rem;
+}
+
+.hero .btn {
+  background: #FFA726;
+  color: #fff;
+  padding: 0.8rem 1.5rem;
+  border-radius: 25px;
+  text-decoration: none;
+  display: inline-block;
+  margin-top: 1rem;
+  transition: transform 0.25s ease;
+}
+
+.hero .btn:hover {
+  transform: scale(1.1);
+}
+
+.highlights {
+  background: #DCDCDC;
+}
+
+/* --- Estrutura geral das seções --- */
+section {
+  padding: 2rem 2rem;
+}
+
+/* --- Cards / Serviços / Galeria --- */
+.cards,
+.servico-lista,
+.galeria {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+
+.card,
+.servico,
+.projeto {
+  background: #fff;
+  padding: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.card:hover,
+.servico:hover,
+.projeto:hover {
+  transform: scale(1.05);
+}
+
+/* TAMANHO PADRÃO DAS IMAGENS DO PORTFÓLIO */
+.projeto img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+}
+
+.projeto img:hover {
+  transform: scale(1.08);
+}
+
+/* --- Formulário de Contato --- */
+#formContato {
+  max-width: 600px;
+  margin: 0 auto;
+  background: #fff;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#formContato label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+#formContato input,
+#formContato textarea {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+  margin-bottom: 1.5rem;
+  font-family: "Poppins", sans-serif;
+}
+
+#formContato textarea {
+  min-height: 200px;
+  resize: vertical;
+}
+
+#formContato .btn {
+  background: #0d47a1;
+  color: #fff;
+  border: none;
+  padding: 0.8rem 1.5rem;
+  border-radius: 25px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+#formContato .btn:hover {
+  background: #1565c0;
+}
+
+/* --- Rodapé --- */
+footer {
+  background: #0d47a1;
+  color: #fff;
+  text-align: center;
+  padding: 1rem;
+}
+
+/* === CARROSSEL DE FOTOS === */
+.carousel {
+  position: relative;
+  width: 100%;
+  max-width: 1920px;
+  aspect-ratio: 2.67 / 1;
+  overflow: hidden;
+  border-radius: 0px;
+  box-shadow: 0 0 0px rgba(0, 0, 0, 0.6);
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 0px;
+}
+
+.carousel-images {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.8s ease-in-out;
+}
+
+.carousel-images img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  flex-shrink: 0;
+  transition: transform 0.4s ease;
+}
+
+.carousel-images img:hover {
+  transform: scale(1.06);
+}
+
+/* --- Botões --- */
+.carousel button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  border: none;
+  color: white;
+  font-size: 1.4rem;
+  cursor: pointer;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  transition: background-color 0.3s, transform 0.2s;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+  padding: 0;
+  backdrop-filter: blur(3px);
+}
+
+.carousel button:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+  transform: translateY(-50%) scale(1.1);
+}
+
+.prev {
+  left: 20px;
+}
+
+.next {
+  right: 20px;
+}
+
+/* Overlay do loading */
+#loading {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.9);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  opacity: 1;
+  pointer-events: all;
+  transition: opacity 0.3s ease;
+}
+
+/* Esconder o loading */
+#loading.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* Spinner */
+.spinner {
+  width: 50px;
+  height: 50px;
+  border: 5px solid #ccc;
+  border-top-color: #007bff;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
