@@ -1,13 +1,13 @@
+/* ===== BASE ===== */
 body {
   margin: 0;
   font-family: "Poppins", sans-serif;
   color: #222;
   background-color: #DCDCDC;
   padding-top: 85px;
-  /* evita que o conteúdo fique atrás do header fixo */
 }
 
-/* --- Cabeçalho --- */
+/* ===== HEADER ===== */
 header {
   background: #0d47a1;
   color: #fff;
@@ -25,11 +25,8 @@ header {
 header .logo {
   font-size: 1.5rem;
   font-weight: bold;
-  color: #fff;
   text-decoration: none;
-
   transition: transform 0.25s ease;
-  display: inline-block;
 }
 
 header .logo:hover {
@@ -52,7 +49,6 @@ nav a {
   color: #fff;
   text-decoration: none;
   transition: transform 0.25s ease;
-  display: inline-block;
 }
 
 nav a.active,
@@ -61,7 +57,7 @@ nav a:hover {
   transform: scale(1.11);
 }
 
-/* --- Seção hero/banner --- */
+/* ===== HERO ===== */
 .hero {
   background: url('4.jpg') center/cover no-repeat;
   color: #ffffff;
@@ -75,8 +71,6 @@ nav a:hover {
   padding: 0.8rem 1.5rem;
   border-radius: 25px;
   text-decoration: none;
-  display: inline-block;
-  margin-top: 1rem;
   transition: transform 0.25s ease;
 }
 
@@ -84,16 +78,11 @@ nav a:hover {
   transform: scale(1.1);
 }
 
-.highlights {
-  background: #DCDCDC;
-}
-
-/* --- Estrutura geral das seções --- */
+/* ===== SEÇÕES ===== */
 section {
   padding: 2rem 2rem;
 }
 
-/* --- Cards / Serviços / Galeria --- */
 .cards,
 .servico-lista,
 .galeria {
@@ -108,7 +97,7 @@ section {
   background: #fff;
   padding: 1.5rem;
   border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
   text-align: center;
   transition: transform 0.3s ease;
 }
@@ -119,7 +108,7 @@ section {
   transform: scale(1.05);
 }
 
-/* TAMANHO PADRÃO DAS IMAGENS DO PORTFÓLIO */
+/* PORTFÓLIO IMG */
 .projeto img {
   width: 100%;
   height: 250px;
@@ -132,7 +121,7 @@ section {
   transform: scale(1.08);
 }
 
-/* --- Formulário de Contato --- */
+/* ===== FORMULÁRIO ===== */
 #formContato {
   max-width: 600px;
   margin: 0 auto;
@@ -143,7 +132,6 @@ section {
 }
 
 #formContato label {
-  display: block;
   font-weight: 600;
   margin-bottom: 0.5rem;
 }
@@ -151,13 +139,10 @@ section {
 #formContato input,
 #formContato textarea {
   width: 100%;
-  box-sizing: border-box;
   padding: 0.75rem;
-  border: 1px solid #ccc;
   border-radius: 6px;
-  font-size: 1rem;
   margin-bottom: 1.5rem;
-  font-family: "Poppins", sans-serif;
+  font-size: 1rem;
 }
 
 #formContato textarea {
@@ -171,7 +156,6 @@ section {
   border: none;
   padding: 0.8rem 1.5rem;
   border-radius: 25px;
-  font-size: 1rem;
   cursor: pointer;
   transition: background-color 0.3s;
 }
@@ -180,38 +164,23 @@ section {
   background: #1565c0;
 }
 
-/* --- Rodapé --- */
-footer {
-  background: #0d47a1;
-  color: #fff;
-  text-align: center;
-  padding: 1rem;
-}
-
-/* === CARROSSEL DE FOTOS === */
+/* ===== CARROSSEL ===== */
 .carousel {
   position: relative;
   width: 100%;
   max-width: 1920px;
   aspect-ratio: 2.67 / 1;
   overflow: hidden;
-  border-radius: 0px;
-  box-shadow: 0 0 0px rgba(0, 0, 0, 0.6);
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 0px;
+  margin: 0 auto;
 }
 
 .carousel-images {
   display: flex;
-  width: 100%;
-  height: 100%;
   transition: transform 0.8s ease-in-out;
 }
 
 .carousel-images img {
   width: 100%;
-  height: 100%;
   object-fit: cover;
   flex-shrink: 0;
   transition: transform 0.4s ease;
@@ -221,7 +190,6 @@ footer {
   transform: scale(1.06);
 }
 
-/* --- Botões --- */
 .carousel button {
   position: absolute;
   top: 50%;
@@ -229,19 +197,11 @@ footer {
   background-color: rgba(0, 0, 0, 0.5);
   border: none;
   color: white;
-  font-size: 1.4rem;
-  cursor: pointer;
   width: 45px;
   height: 45px;
   border-radius: 50%;
-  transition: background-color 0.3s, transform 0.2s;
+  cursor: pointer;
   z-index: 10;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  line-height: 1;
-  padding: 0;
-  backdrop-filter: blur(3px);
 }
 
 .carousel button:hover {
@@ -249,15 +209,41 @@ footer {
   transform: translateY(-50%) scale(1.1);
 }
 
-.prev {
-  left: 20px;
+.prev { left: 20px; }
+.next { right: 20px; }
+
+/* ===== LOADING ===== */
+#loading {
+  position: fixed;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.9);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  opacity: 1;
+  pointer-events: all;
+  transition: opacity 0.3s ease;
 }
 
-.next {
-  right: 20px;
+#loading.hidden {
+  opacity: 0;
+  pointer-events: none;
 }
 
-/* ---- Tablets e telas médias ↓↓↓ ---- */
+.spinner {
+  width: 50px;
+  height: 50px;
+  border: 5px solid #ccc;
+  border-top-color: #007bff;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin { to { transform: rotate(360deg); } }
+
+/* RESPONSIVIDADE */
+/* ---- Tablets e telas médias ---- */
 @media (max-width: 1024px) {
   header {
     padding: 1rem;
@@ -276,7 +262,7 @@ footer {
   }
 }
 
-/* ---- Smartphones grandes ↓↓↓ ---- */
+/* ---- Smartphones grandes ---- */
 @media (max-width: 768px) {
 
   /* header empilhado */
@@ -314,9 +300,10 @@ footer {
     width: 40px;
     height: 40px;
   }
+
 }
 
-/* ---- Smartphones pequenos ↓↓↓ ---- */
+/* ---- Smartphones pequenos ---- */
 @media (max-width: 480px) {
 
   header .logo {
@@ -345,44 +332,5 @@ footer {
   .next {
     width: 35px;
     height: 35px;
-  }
-}
-
-/* Overlay do loading */
-#loading {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(255, 255, 255, 0.9);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 9999;
-  opacity: 1;
-  pointer-events: all;
-  transition: opacity 0.3s ease;
-}
-
-/* Esconder o loading */
-#loading.hidden {
-  opacity: 0;
-  pointer-events: none;
-}
-
-/* Spinner */
-.spinner {
-  width: 50px;
-  height: 50px;
-  border: 5px solid #ccc;
-  border-top-color: #007bff;
-  border-radius: 50%;
-  animation: spin 1s linear infinite;
-}
-
-@keyframes spin {
-  to {
-    transform: rotate(360deg);
   }
 }
